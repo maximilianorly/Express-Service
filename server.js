@@ -8,6 +8,12 @@ app.get('/', function(req, res) {
   });
 });
 
+app.get('/', function(req, res) {
+  res.send({
+    "Greeting": "Bonjour Bitch!"
+  });
+});
+
 app.post('/', function(req, res) {
   res.send({
     "Output" : "Hello World!"
