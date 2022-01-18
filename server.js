@@ -8,9 +8,9 @@ app.get('/', function(req, res) {
   });
 });
 
-app.get('/', function(req, res) {
+app.get('/hi', function(req, res) {
   res.send({
-    "Greeting": "Bonjour Bitch!"
+    "Greeting" : "Bonjour Bitch!"
   });
 });
 

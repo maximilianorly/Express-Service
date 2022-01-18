@@ -14,6 +14,13 @@ describe('Tests app', function() {
         done(err);
     });
   });
+  it('says hello in french and calls u a lil bitch', function(done) {
+    request.get('/hi').expect(200).end(function(err, result) {
+      test.string(result.body.Greeting).contains('Bonjour');
+      test.value(result).hasHeader('content-type', 'application/json; charset=utf-8');
+      done(err);
+    });
+  });
   it('verifies post', function(done) {
     request.post('/').expect(200).end(function(err, result) {
         test.string(result.body.Output).contains('Hello');
