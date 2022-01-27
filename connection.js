@@ -1,9 +1,22 @@
 const { connectionString } = require('./config');
 const mongoose = require('mongoose');
 
-mongoose.connect(connectionString, {
-    useNewUrlParser: true
-});
+if (process.env.NODE_ENV === 'test') {
+    const Mockgoose = require('mockgoose').Mockgoose;
+    const mockgoose = new Mockgoose(mongoose);
+
+    mockgoose.prepareStorage()
+    .then(() => {
+        mongoose.connect(connectionString, {
+            useNewUrlParser: true
+        });
+    })
+} else {
+
+    mongoose.connect(connectionString, {
+        useNewUrlParser: true
+    });
+}
 
 const testSchema = new mongoose.Schema({
     name: String,
