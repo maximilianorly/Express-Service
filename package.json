@@ -1,17 +1,36 @@
 {
-    "name": "express-HelloWorld",
-    "description": "Hello World ExpressJS WebService",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "4.16.2"
-    },
-    "devDependencies": {
-        "mocha": "^5.2.0",
-        "supertest": "3.0.0",
-        "unit.js": "^2.1.1"
-    },
-    "scripts": {
-        "test": "mocha --recursive tests --exit"
-    }
+  "name": "express-helloworld",
+  "description": "Hello World ExpressJS WebService",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "4.16.2",
+    "mongoose": "^6.1.7",
+    "mongosh": "^1.1.9"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "supertest": "3.0.0",
+    "unit.js": "^2.1.1"
+  },
+  "scripts": {
+    "test": "mocha --recursive tests --exit",
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianorly/Express-Service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilianorly/Express-Service/issues"
+  },
+  "homepage": "https://github.com/maximilianorly/Express-Service#readme"
 }
