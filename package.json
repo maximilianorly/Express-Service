@@ -8,8 +8,7 @@
     "chai": "^4.3.6",
     "express": "4.16.2",
     "mockgoose": "^8.0.4",
-    "mongoose": "^6.1.7",
-    "mongosh": "^1.1.9"
+    "mongoose": "^6.1.7"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
