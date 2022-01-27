@@ -30,8 +30,8 @@ describe('Tests app', function() {
   });
   it('attempts to add new document to database and returns response success object', function(done) {
     const params = { name: 'testName', text: 'testText', owner: 'testOwner' };
-    request.post('/store').send(params).expect(200).end(async function(err, result) {
-      await test.value(result).hasHeader('content-type', 'application/json; charset=utf-8');
+    request.post('/store').send(params).expect(200).end(function(err, result) {
+      test.value(result).hasHeader('content-type', 'application/json; charset=utf-8');
       done(err);
     })
   })
