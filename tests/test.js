@@ -1,5 +1,6 @@
 'use strict';
-
+process.env.NODE_ENV = 'test';
+const expect = require('chai').expect;
 const supertest = require('supertest'); 
 const test = require('unit.js');
 const app = require('../server.js');
@@ -29,10 +30,14 @@ describe('Tests app', function() {
     });
   });
   it('attempts to add new document to database and returns response success object', function(done) {
-    const params = { name: 'testName', text: 'testText', owner: 'testOwner' };
-    request.post('/store').send(params).expect(200).end(function(err, result) {
-      test.value(result).hasHeader('content-type', 'application/json; charset=utf-8');
-      done(err);
+    const params = { name: 'testName1', text: 'testText1', owner: 'testOwner' };
+    request.post('/store').send(params).then((res) => {
+      const body = res.body;
+      expect(200);
+      expect(body).to.contain.property('isSuccessful');
+      expect(body).to.contain.property('message');
+      done();
     })
+    .catch((err) => done(err));
   })
 });
